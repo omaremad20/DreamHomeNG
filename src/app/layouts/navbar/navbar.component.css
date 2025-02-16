@@ -1,0 +1,139 @@
+/* ul.dropdown-menu li a i {
+  font-size: 1.25rem;
+} */
+
+i.toDark {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+a.navbar-brand {
+  /* color: unset !important; */
+  /* color: #F6F7F9 !important; */
+}
+button.editingButtonsFormNavR {
+  all: unset;
+  color: rgb(108, 117, 125);
+  line-height: 1.75rem;
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+  border-radius: 0.5rem;
+  /* background-color: #F6F7F9; */
+  cursor: pointer;
+  border: solid 3px transparent;
+}
+button.btn-close.btn-close-color {
+  /* background-color: #FED754 ; */
+}
+button.editingButtonsFormNavL {
+  all: unset;
+  /* color: black; */
+  line-height: 1.75rem;
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+  border-radius: 0.5rem;
+  /* background-color: #FED754; */
+  cursor: pointer;
+  border: solid 3px transparent;
+}
+#registerLink , #loginLink {
+  /* color: #000; */
+}
+li.nav-item a.nav-link:hover {
+  /* color: #FED754; */
+}
+.w-fit {
+  width: fit-content;
+}
+i.toDark {
+  /* color: gray !important; */
+  border: solid transparent 3px;
+  /* background-color: #FFFFFF ; */
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+}
+
+div.logo {
+  width: 25%;
+}
+
+.hometxt {
+  font-weight: bolder;
+}
+
+/* .navbar {
+  background-color: #161a28;
+}
+
+.navbar.transparent {
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: #000 !important;
+} */
+
+
+
+a.nav-link {
+  /* color: #fff; */
+}
+
+.text-yellow {
+  /* color: #FED754 !important; */
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  /* background-color: #FAC600; */
+  left: 0%;
+  bottom: 0%;
+  transition: ease-in-out width 0.3s;
+}
+
+.activeLinkNow::after {
+  width: 100% !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+.activeLinkNow {
+ /* color: #FAC600 !important; */
+ font-weight: bold !important;
+}
+
+
+.spcial-nav-link:hover::after {
+  width: 100%;
+}
+
+.spcial-nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  /* background-color: #FAC600; */
+  left: 0%;
+  bottom: -30%;
+  transition: ease-in-out width 0.3s;
+}
+nav {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+.darkBtn {
+  all: unset !important;
+
+  cursor: pointer;
+  /* margin-inline:1rem ; */
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}

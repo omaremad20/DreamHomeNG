@@ -1,0 +1,42 @@
+@if(isLoading === true) {
+  <div class="loader">
+    <div class="spinner"></div>
+  </div>
+}
+@else if (isLoading === false) {
+  <section class="d-flex flex-column min-vh-100 container">
+    <h1 class="text-center py-3">Chat Now with Customer</h1>
+    <div class="flex-grow-1 overflow-auto px-3 mb-5" style="padding-bottom: 100px;">
+      @for(msg of messages; track $index) {
+        <div class="d-flex mb-2"
+             [class]="{'justify-content-end': msg.sender._id === senderId,
+                       'justify-content-start': msg.sender._id !== senderId}">
+
+          <p class="rounded px-3 py-2 text-white"
+             [class]="{'bg-warning': msg.sender._id === senderId,
+                       'bg-dark': msg.sender._id !== senderId}">
+
+            <span>{{ msg.message }}</span>
+            <small class="d-block text-end opacity-75">{{msg.timestamp.split('').splice(12 , 5).join('')}} AM</small>
+          </p>
+        </div>
+      }
+    </div>
+    <div class="position-fixed bottom-0 start-0 end-0  py-2 shadow">
+      <div class="container main-text-area d-flex align-items-center">
+        <div class="col-10">
+          <textarea [(ngModel)]="messageText"
+                    class="form-control py-3"
+                    placeholder="Type a message"
+                    rows="1"
+                    style="resize: none; overflow-y: hidden;"
+                    (input)="adjustTextarea($event)">
+          </textarea>
+        </div>
+        <i class="fa-solid fa-paper-plane fs-1 text-white border-1 btn-dark btn ms-3" (click)="sendMessage()"></i>
+
+      </div>
+    </div>
+  </section>
+
+}

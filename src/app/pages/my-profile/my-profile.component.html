@@ -1,0 +1,119 @@
+@if (isLoading === true) {
+  <div  class="loader">
+    <div class="spinner"></div>
+  </div>
+}
+@else if (isLoading === false) {
+  @if(userRole === 'customer') {
+    <section class="">
+      <h1 class="fw-bold pb-4 text-center anmieWord">welcome <span class="anmieWord">{{userName}}</span> </h1>
+      <div class="container">
+        <h2 class="fw-medium pb-2 position-relative RegisteritionTxt">your dashboard</h2>
+        <div class="row my-4">
+          <div class="col-12  col-md-6 col-lg-4 cursor-pointer" routerLink="/upload-post">
+            <div class="inner  shadow  rounded rounded-4 p-3 ">
+              <i class="fa-solid fa-upload text-white  w-100 fs-1 py-3 d-flex justify-content-center"></i>
+              <h2 class="fs-4 fw-bold mb-3" >Upload A Post </h2>
+              <p>If you have an issue at home, you can upload a post describing the problem. </p>
+              <div class="d-flex  justify-content-center align-items-center">
+                <i class="fa-solid  me-2 fa-circle warningNote align-self-stretch mt-1 fs-6"></i>
+                <p class="text-white-50"> <span class="fw-bold">please note that : </span>  <span>Only workers from the relevant department (e.g., plumbing, electricity, etc.) will be able to view your issue. For example, if your problem is related to plumbing, only plumbing workers will see it</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6  col-lg-4 cursor-pointer" routerLink="/MsgsAndNotfi">
+            <div class="inner  shadow rounded rounded-4 p-3">
+              <i class="fa-solid fa-envelope text-white  w-100 fs-1 py-3 d-flex justify-content-center"></i>
+              <h2 class="fs-4 fw-bold mb-3">messages and notfications </h2>
+              <p>You can check your private messages and see which workers are requesting your review. Only rate workers who have actually completed a job for you.</p>
+              <!--  -->
+              <div class="d-flex  justify-content-center align-items-center">
+                <i class="fa-solid  me-2 fa-circle warningNote align-self-stretch mt-1 fs-6"></i>
+                <p class="text-white-50"> <span class="fw-bold">please note that : </span>  <span> If a worker asks for a review without doing any work, do not provide a rating.</span></p>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+          <div class="col-12 col-md-6  col-lg-4 cursor-pointer" routerLink="/settings">
+            <div class="inner shadow rounded  mt-0 rounded-4 p-3">
+              <i class="fa-solid fa-gear text-white  w-100 fs-1 py-3 d-flex justify-content-center"></i>
+              <h2 class="fs-4 fw-bold mb-3">settings</h2>
+              <p>You can switch between dark and light mode, change your preferred language, update your name, and log out of your account. </p>
+              <!--  -->
+              <div class="d-flex  justify-content-center align-items-center">
+                <i class="fa-solid  me-2 fa-circle warningNote align-self-stretch mt-1 fs-6"></i>
+                <p class="text-white-50"> <span class="fw-bold">please note that : </span>  <span> Make sure to save your settings to keep your preferences updated.</span></p>
+              </div>
+              <!--  -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  }@else if (userRole === 'employee') {
+    <section class="">
+      <h1 class="fw-bold pb-4 text-center anmieWord">welcome <span class="anmieWord">{{userName}}</span> </h1>
+      <div class="container">
+        <h2 class="fw-medium pb-2 position-relative RegisteritionTxt">your dashboard</h2>
+        <div class="row my-4">
+          <div class="col-12 col-md-6 col-lg-4 cursor-pointer">
+            <div class="inner shadow  rounded rounded-4 p-3 ">
+              <i class="fa-solid fa-eye text-white w-100 fs-1 py-3 d-flex justify-content-center"></i>
+              <h2 class="fs-4 fw-bold mb-3" routerLink="/browse-projects">browse projects</h2>
+              <p>As a worker, you can browse available projects and find tasks that match your skills.</p>
+              <div class="d-flex  justify-content-center align-items-center">
+                <i class="fa-solid  me-2 fa-circle warningNote align-self-stretch mt-1 fs-6"></i>
+                <p class="text-white-50">
+                  <span class="fw-bold">Please note that:</span>
+                  <span>Only workers from the relevant department (e.g., plumbing, electricity, etc.) will be able to view your issue. Likewise, you can only browse projects that belong to your department.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6  col-lg-4 cursor-pointer" routerLink="/MsgsAndNotfi">
+            <div class="inner  shadow rounded rounded-4 p-3">
+              <i class="fa-solid fa-envelope text-white  w-100 fs-1 py-3 d-flex justify-content-center"></i>
+              <h2 class="fs-4 fw-bold mb-3">messages and notfications </h2>
+              <p>You can check your messages and send review requests to clients. Make sure to request a review only after successfully completing a job.</p>
+              <!--  -->
+              <div class="d-flex  justify-content-center align-items-center">
+                <i class="fa-solid  me-2 fa-circle warningNote align-self-stretch mt-1 fs-6"></i>
+                <p class="text-white-50">
+                  <span class="fw-bold">Important notice:</span>
+                  <span>Only request a review after successfully completing a job. Asking for reviews without completing work may affect your credibility.</span>
+                </p>
+
+              </div>
+              <!--  -->
+
+            </div>
+          </div>
+          <div class="col-12 col-md-6  col-lg-4 cursor-pointer" routerLink="/settings">
+            <div class="inner shadow rounded  mt-0 rounded-4 p-3">
+              <i class="fa-solid fa-gear text-white  w-100 fs-1 py-3 d-flex justify-content-center"></i>
+              <h2 class="fs-4 fw-bold mb-3">settings</h2>
+              <p>You can switch between dark and light mode, change your preferred language, update your name, and log out of your account. Completing your profile, including your email, will help clients find and trust you more easily.</p>
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="fa-solid me-2 fa-circle warningNote align-self-stretch mt-1 fs-6"></i>
+                <p class="text-white-50">
+                  <span class="fw-bold">Important notice:</span>
+                  <span>Make sure to save your settings to keep your preferences updated. Also, an incomplete email in your profile may reduce your visibility and limit the number of clients reaching out to you.</span>
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  }
+
+}
+
+
+
+
+

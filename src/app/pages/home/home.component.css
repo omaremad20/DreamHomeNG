@@ -1,0 +1,42 @@
+div.bg-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../../../../public/images/background.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.btnService button {
+  all: unset;
+  border: solid 1px black;
+  border-radius: 50rem;
+  padding-block: 1rem;
+  padding-inline: 0.5rem;
+  color: #fff;
+  animation-name: move;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.btnService {
+  position: absolute;
+  bottom: 10%;
+}
+
+.anmation-word {
+  animation-name: move;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes move {
+  0% {
+      transform: translateY(-10px);
+  }
+
+  100% {
+      transform: translateY(10px);
+  }
+}

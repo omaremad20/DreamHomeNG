@@ -1,0 +1,26 @@
+@if (isNotfaied === true) {
+  <section>
+    <div class="container">
+      <div class="row">
+        @for (notfi of NotficationsRes; track notfi._id) {
+          <div class="col-12">
+            <div class="inner">
+              <p>{{notfi.message}}</p>
+              <button class="btn btn-danger" (click)="deleteNotification(notfi._id)">
+                Delete
+              </button>
+
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}
+@else if(isNotfaied === false) {
+  <section class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="w-50 text-center  alert-danger alert">
+      <p class="mb-0">No Notfications Found ! <i class="fa-regular fa-face-frown-open"></i> </p>
+    </div>
+  </section>
+}

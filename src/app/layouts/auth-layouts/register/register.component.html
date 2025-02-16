@@ -1,0 +1,185 @@
+  <section class="my-5">
+    <div class="container formDarkNdlight    py-5 px-5 shadow rounded rounded-3">
+      <h1 class="mb-5 fw-bold position-relative RegisteritionTxt">
+        {{ 'registration.register' | translate }} <i class="fa-solid fa-right-to-bracket"></i>
+      </h1>
+
+      <form [formGroup]="registerFormData" (ngSubmit)="submitForm()">
+        <div class="form-floating mb-3">
+          <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="Your firstname...">
+          <label for="firstName" class="form-label">{{ 'registration.firstname' | translate }}</label>
+          @if(registerFormData.get('firstName')?.errors && registerFormData.get('firstName')?.touched) {
+            @if(registerFormData.get('firstName')?.getError('required')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> This field is required.</p>
+            }
+            @if(registerFormData.get('firstName')?.getError('pattern')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> The name must be between 3 and 10 characters long.</p>
+            }
+          }
+        </div>
+        <div class="form-floating mb-3">
+          <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Your lastname...">
+          <label for="lastName" class="form-label">{{ 'registration.lastname' | translate }}</label>
+          @if(registerFormData.get('lastName')?.errors && registerFormData.get('lastName')?.touched) {
+            @if(registerFormData.get('lastName')?.getError('required')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> This field is required.</p>
+            }
+            @if(registerFormData.get('lastName')?.getError('pattern')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> The name must be between 3 and 10 characters long.</p>
+            }
+          }
+        </div>
+        <div class="form-floating mb-3">
+          <input formControlName="email" type="email" class="form-control" id="email" placeholder="Your Email...">
+          <label for="email" class="form-label">{{ 'registration.email' | translate }}</label>
+          @if(registerFormData.get('email')?.errors && registerFormData.get('email')?.touched) {
+            @if(registerFormData.get('email')?.getError('required')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> This field is required.</p>
+            }
+            @if(registerFormData.get('email')?.getError('email')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> Invaild Email</p>
+            }
+            @if(registerFormData.get('email')?.getError('pattern')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> Email Must End With {{atChar}}gmail.com</p>
+            }
+          }
+        </div>
+        <div class="position-relative form-floating mb-3">
+          <input
+            formControlName="password"
+            [type]="passwordVisible ? 'text' : 'password'"
+            class="form-control"
+            id="password"
+            placeholder="Password..."
+          >
+          <div class="icon-eye position-absolute" (click)="togglePasswordVisibility()">
+            <i
+              class="fa-solid text-white"
+              [class.fa-eye]="passwordVisible"
+              [class.fa-eye-slash]="!passwordVisible"
+            ></i>
+          </div>
+          <label for="password" class="form-label">{{ 'registration.password' | translate }}</label>
+        </div>
+        @if(registerFormData.get('password')?.errors && registerFormData.get('password')?.touched) {
+          @if(registerFormData.get('password')?.getError('required')) {
+            <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> This field is required.</p>
+          }
+          @if(registerFormData.get('password')?.getError('pattern')) {
+            <p class="text-danger ms-3 my-3 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> Password must contain at least 6 characters, including letters and numbers.</p>
+          }
+        }
+
+
+        <div class="position-relative form-floating mb-3">
+          <input
+            formControlName="repassword"
+            [type]="repasswordVisible ? 'text' : 'password'"
+            class="form-control"
+            id="repassword"
+            placeholder="Repeat Password..."
+          >
+          <div class="icon-eye position-absolute" (click)="togglerePasswordVisibility()">
+            <i
+              class="fa-solid text-white"
+              [class.fa-eye]="repasswordVisible"
+              [class.fa-eye-slash]="!repasswordVisible"
+            ></i>
+          </div>
+          <label for="password" class="form-label">{{ 'registration.repassword' | translate }}</label>
+        </div>
+
+
+
+          @if(registerFormData.get('repassword')?.errors && registerFormData.get('repassword')?.touched) {
+            @if(registerFormData.get('repassword')?.getError('required')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> This field is required.</p>
+            }
+            @if(registerFormData.get('repassword')?.getError('notMatch')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i>Password Doesn't Match</p>
+            }
+          }
+
+        <div class="form-floating mb-3">
+          <input formControlName="contactNumber" type="tel" class="form-control" id="contactNumber" placeholder="Your contact number...">
+          <label for="contactNumber" class="form-label">{{ 'registration.contactNumber' | translate }}</label>
+          @if(registerFormData.get('contactNumber')?.errors && registerFormData.get('contactNumber')?.touched) {
+            @if(registerFormData.get('contactNumber')?.getError('required')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> This field is required.</p>
+            }
+            @if(registerFormData.get('contactNumber')?.getError('pattern')) {
+              <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> Enter a valid Egyptian phone number  </p>
+            }
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="fw-bold">{{ 'registration.selectRole' | translate }}</label>
+          @if(registerFormData.get('role')?.errors && registerFormData.get('role')?.touched) {
+            <p class="text-danger ms-3 my-2 d-flex align-items-center "><i class="me-1 fa-solid fa-circle-exclamation"></i> Role Is Required </p>
+          }
+          <div class="form-check">
+            <input formControlName="role" class="form-check-input" type="radio" value="customer" id="workerCheck">
+            <label class="form-check-label" for="workerCheck">{{ 'registration.customer' | translate }}</label>
+          </div>
+          <div class="form-check">
+            <input formControlName="role" class="form-check-input" type="radio" value="employee" id="employeeCheck" checked>
+            <label class="form-check-label" for="employeeCheck">{{ 'registration.employee' | translate }}</label>
+
+          </div>
+        </div>
+        @if(registerFormData.get('role')?.value === 'employee') {
+          <div class="form-floating my-3">
+            <select formControlName="job" class="form-select" id="serviceSelect">
+              <option value="" disabled selected>{{ 'registration.selectJob' | translate }} selectJob</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="painting">Painting</option>
+              <option value="electricity">Electricity</option>
+              <option value="satellite">Satellite</option>
+              <option value="gypsum-board">GYPSUM-BOARD</option>
+              <option value="carpentry">Carpentry</option>
+              <option value="internet networks">Internet Networks</option>
+              <option value="alumetal">Alumetal</option>
+              <option value="curtains">Curtains</option>
+              <option value="air condition">Air Condition</option>
+              <option value="home appliances">Home appliances</option>
+              <option value="wooden floors">Wooden floors</option>
+            </select>
+            <label for="serviceSelect">{{ 'registration.registerButton' | translate }}</label>
+          </div>
+        }
+        @if(isLoading === true) {
+          <div class="d-flex justify-content-center py-3">
+            <button class="btn btn-FED754 w-50 disabled">{{ 'registration.registerButton' | translate }}  <i class="fa-solid fa-spinner fa-spin me-2"></i> </button>
+          </div>
+        }@else if (isLoading === false) {
+          <div class="d-flex justify-content-center py-3">
+            <button class="btn btn-FED754 w-50 ">{{ 'registration.registerButton' | translate }}  <i class="fa-solid fa-right-to-bracket"></i> </button>
+          </div>
+        }
+
+      </form>
+      @if(emailExists === true) {
+        <div class="alert alert-danger "role="alert"><i class="me-1 fa-solid fa-circle-exclamation"></i> Email Is Already Exsits !</div>
+      }
+      <p class="text-center">Have An Account ? <span class="cursor-pointer fw-bold text-decoration-underline" routerLink="/login">Login Now </span></p>
+    </div>
+    @if(done === true) {
+      <div class="modal-overlay ">
+        <div class="modal-content formDarkNdlight p-5 shadow w-50">
+          <h2> Registration Successful ! <i class="fa-regular text-success fa-circle-check"></i></h2>
+          <p>Welcome to dream home. Please enter the OTP sent to your email.</p>
+
+          <!-- مودال إدخال OTP -->
+          <div class="otp-verification">
+            <input type="text" placeholder="Enter OTP" [(ngModel)]="enteredOtp" class="form-control mb-3"/>
+            <button class="btn btn-primary" (click)="verifyAndSubmit()">Verify OTP</button>
+          </div>
+
+          <p routerLink="/login" class="cursor-pointer fw-bold text-decoration-underline">login now</p>
+          <button (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    }
+
+  </section>

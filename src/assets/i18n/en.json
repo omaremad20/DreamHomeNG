@@ -1,0 +1,101 @@
+{
+  "servicex" : {
+    "SERVICES": "Services",
+    "FIX_NOW": "Fix Now",
+    "PLUMBING": "Plumbing",
+    "PAINTING": "Painting",
+    "ELECTRICITY": "Electricity",
+    "SATELLITE": "Satellite",
+    "GYPSUM_BOARD": "Gypsum Board",
+    "CARPENTRY": "Carpentry",
+    "INTERNET_NETWORKS": "Internet Networks",
+    "ALUMETAL": "Alumetal",
+    "CURTAINS": "Curtains",
+    "AIR_CONDITION": "Air Condition",
+    "HOME_APPLIANCES": "Home Appliance",
+    "WOODEN_FLOORS": "Wooden Floors"
+  } ,
+  "navbar": {
+    "Dream" : "Dream" ,
+    "Home" : "Home" ,
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "login": "Login",
+    "register": "Register",
+    "toggleThemeDark": "Switch to Dark Mode",
+    "toggleThemeLight": "Switch to Light Mode",
+    "language": "Ar"
+  } ,
+  "login": {
+    "title": "Login Form",
+    "emailPlaceholder": "Your Email...",
+    "emailLabel": "Email",
+    "passwordPlaceholder": "Password...",
+    "passwordLabel": "Password",
+    "button": "Login"
+  } ,
+  "footer": {
+
+    "get_app": "Get The DreamHome app",
+    "app_description": "We will send you a link, open on your phone to download the app.",
+    "email_placeholder": "Your Email...",
+    "share_link": "Share App Link",
+    "follow_us": "Follow Us On These Platforms",
+    "copyright": "© 2025 DreamHome. All rights reserved.",
+    "designed_by": "Designed By Belal Wael."
+  } ,
+  "registration" : {
+      "register": "Register",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "email": "Email",
+      "password": "Password",
+      "repassword": "Re-enter Password",
+      "contactNumber": "Contact Number",
+      "selectRole": "Select Role",
+      "customer": "Customer",
+      "employee": "Employee",
+      "selectJob": "Select Your Job",
+      "registerButton": "Register"
+  } ,
+  "about_section": {
+    "title": "ABOUT US",
+    "what_we_do": {
+      "title": "What We Do ?",
+      "description": "We connect homeowners with trusted professionals for home repair and improvement. From plumbing to painting, our platform ensures fast, reliable, and hassle-free service. Whether it's a small fix or major work, we bridge the gap efficiently."
+    },
+    "who_we_are": {
+      "title": "Who We Are ?",
+      "description": "We are a passionate team committed to simplifying home maintenance for everyone. Using innovative technology, we match clients with vetted experts. Our goal is to provide reliable services that build trust and long-term relationships."
+    },
+    "our_mission": {
+      "title": "Our Mission",
+      "description": "Our mission is to make finding reliable home repair experts simple and stress-free. We focus on quality, trust, and customer satisfaction. By saving your time and effort, we aim to deliver the best home maintenance experience."
+    }
+  } ,
+    "stats_section": {
+      "works_completed": "WORKS COMPLETED",
+      "years_of_experience": "YEARS OF EXPERIENCE",
+      "total_clients": "TOTAL CLIENTS",
+      "award_won": "AWARD WON"
+    },
+    "contact_section": {
+      "send_message_title": "Send Message Us",
+      "name_placeholder": "Your Name...",
+      "email_placeholder": "Your Email...",
+      "subject_placeholder": "Subject...",
+      "message_placeholder": "Message...",
+      "send_button": "Send Message",
+      "get_in_touch_title": "Get in Touch",
+      "contact_description": "We’d love to hear from you! Whether you have questions, feedback, or want to book a service, feel free to reach out. Our team is always ready to assist you.",
+      "address": "90 Saqr Quraish, Maadi",
+      "phone": "+201123456789",
+      "email": "dreamhome@gmail.com"
+    }
+
+}
+

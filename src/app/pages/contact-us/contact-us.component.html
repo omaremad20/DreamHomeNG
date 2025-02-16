@@ -1,0 +1,91 @@
+<section class="sec-image">
+  <div class="row container m-auto">
+    <div class="col-12 col-lg-4">
+      <div class="inner-items  shadow d-flex flex-column text-center py-1 py-lg-5">
+        <ul class="for-ul-items">
+          <li><i class="fa-solid fa-check icon-counter my-3"></i></li>
+          <li class="fs-2">450</li>
+          <li class="worksTxtAr">{{ 'stats_section.works_completed' | translate }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="inner-items shadow d-flex flex-column text-center py-1 py-lg-5">
+        <ul class="for-ul-items">
+          <li><i class="fa-solid fa-book  icon-counter my-3"></i></li>
+          <li class="fs-2">25</li>
+          <li class="yearsTxtAr">{{ 'stats_section.years_of_experience' | translate }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 ">
+      <div class="inner-items shadow d-flex flex-column text-center py-1 py-lg-5">
+        <ul class="for-ul-items">
+          <li><i class="fa-solid fa-users icon-counter my-3"></i></li>
+          <li class="fs-2">550</li>
+          <li class="totalTxtAr">{{ 'stats_section.total_clients' | translate }}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="main-section-form  py-5" id="CONTACTUS">
+  <div class="form-touch px-5 py-5 formDarkNdlight container shadow rounded rounded-2 ">
+    <div class="row row-padding ">
+      <form class="col-12 col-lg-6">
+        <h5 class="RegisteritionTxt pb-2 position-relative">{{'contact_section.send_message_title' | translate}}</h5>
+        <div class="mb-3 form-floating">
+
+
+          <input type="text" class="mt-4 form-control nameMessageUs rounded-2" [placeholder]="'contact_section.name_placeholder' | translate" required id="floatingInput"/>
+          <label for="floatingInput">{{'contact_section.name_placeholder' | translate}}</label>
+        </div>
+        <div class="mb-3 form-floating">
+          <input type="email" class="form-control emailMessageUs rounded-2" id="floatingInput" aria-describedby="emailHelp"
+            [placeholder]="'contact_section.email_placeholder' | translate" required>
+            <label for="floatingInput">{{'contact_section.email_placeholder' | translate}}</label>
+        </div>
+        <div class="mb-3 form-floating">
+
+
+          <input type="text" class="form-control subjectMsg rounded-2" [placeholder]="'contact_section.subject_placeholder' | translate" required id="floatingTextarea2"/>
+          <label for="floatingInput">{{'contact_section.subject_placeholder' | translate}}</label>
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+          <label for="floatingTextarea2">{{'contact_section.message_placeholder' | translate}}</label>
+        </div>
+
+        <button id="" type="button" class="rounded-pill btn my-4">{{'contact_section.send_button' | translate}}</button>
+      </form>
+      <div class="col-12 col-lg-6 position-relative">
+        <h5 class="RegisteritionTxt pb-2 position-relative">{{'contact_section.get_in_touch_title' | translate}}</h5>
+        <p class="lead text-capitalize  contactTxtAr mt-4">{{'contact_section.contact_description' | translate}}</p>
+        <ul class="d-flex flex-column justify-content-center align-items-start">
+          <li class="my-1"><i class="fa-solid fa-location-dot fa-fw me-1  touch-icons"></i> <span class="txt-touch ">{{'contact_section.address' | translate}}</span></li>
+          <li class="my-1"><i class="fa-solid fa-mobile fa-fw me-1 touch-icons"></i> <span class="txt-touch phoneTxt">{{'contact_section.phone' | translate}}</span>
+          </li>
+          <li class="my-1"><i class="fa-regular fa-envelope fa-fw me-1 touch-icons"></i> <span
+              class="txt-touch">{{'contact_section.email' | translate}}</span></li>
+        </ul>
+        <ul class="contact-ways d-flex ms-1">
+          <a href="https://www.instagram.com/" target="_blank" class="text-decoration-none">
+            <li class="instagram spcial-li me-3 fs-5"><i class="fa-brands fa-instagram icon1 spcial-icon"></i></li>
+          </a>
+          <a href="https://www.facebook.com/" class="text-decoration-none" target="_blank">
+            <li class="facebook spcial-li me-3 fs-5"><i class="fa-brands fa-facebook icon4 spcial-icon "></i></li>
+          </a>
+
+          <a href="https://x.com/?lang=en" target="_blank" class="text-decoration-none">
+            <li class="twitter-x spcial-li me-3 fs-5"><i class="fa-brands fa-x-twitter icon2 spcial-icon"></i></li>
+          </a>
+          <a href="https://www.linkedin.com/" class="text-decoration-none" target="_blank">
+            <li class="linked spcial-li me-3 fs-5"><i class="fa-brands fa-tiktok icon3 spcial-icon"></i></li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

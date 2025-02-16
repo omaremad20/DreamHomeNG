@@ -1,0 +1,93 @@
+@if (isLoading) {
+<div class="loader">
+  <div class="spinner"></div>
+</div>
+}
+@else {
+@if (showNoChatsDiv) {
+<div class="text-center vh-100 d-flex justify-content-center align-items-center">
+  <p class="alert alert-danger w-75">No One Chat You ! <i class="fa-regular fa-face-frown-open"></i></p>
+</div>
+} @else {
+<section>
+  <h1 class="anmieWord fw-bold pb-4 text-center">All Chats</h1>
+  <div class="container">
+    <div class="row">
+      @for (item of AllChats; track $index) {
+
+      @if (userRole === 'customer') {
+      <div class="col-12">
+        <div class="inner shadow d-flex container py-4 rounded-4 justify-content-between">
+          <div>
+            <h4 class="fw-bold px-2">Sender: Worker</h4>
+            <h5 class="px-5">{{item.user2.email}}</h5>
+
+            <!-- send reviews -->
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+
+            <!-- send reviews -->
+          </div>
+          <div class="d-flex px-5 align-items-center justify-content-between">
+            <button [routerLink]="['/chat', item.user2._id]"
+              class="btn d-flex justify-content-between align-items-center">
+              <span class="me-1">Send Message</span>
+              <i class="fa-solid fa-message ms-1"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+      } @else if (userRole === 'employee') {
+      <div class="col-12">
+        <div class="inner shadow d-flex container py-4 rounded-4 justify-content-between">
+          <div>
+            <h4 class="fw-bold px-2">Sender: Customer</h4>
+            <div class="d-flex flex-column">
+              <h5 class="px-5">{{item.user1.email}}</h5>
+              <button type="button" class="btnReview w-fit px-5 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                @if(!hasPreviousRequest) {
+                  <span class="text-center fw-bolder innerBtn position-relative">make request review</span>
+                }
+              </button>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <!-- @if (!hasReviewed) { -->
+                    <button type="button" class="btn btn-primary" (click)="sendReviewRequest()">Send Request</button>
+                  <!-- } -->
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="d-flex px-5 align-items-center justify-content-between">
+            <button [routerLink]="['/main-chat', item.user1._id]"
+              class="btn d-flex justify-content-between align-items-center">
+              <span class="me-1">Send Message</span>
+              <i class="fa-solid fa-message ms-1"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+      }
+
+      }
+    </div>
+  </div>
+</section>
+}
+}
